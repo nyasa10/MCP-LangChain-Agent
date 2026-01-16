@@ -52,10 +52,10 @@ async def start():
             # Wrap as a LangChain tool
             from langchain.tools import Tool
             csv_tool = Tool(
-                name=f"query_csv_{file.name.replace('.','_')}",
-                func=lambda q, agent=pandas_agent: agent.run(q),
-                description=f"Use this to answer questions about the data in {file.name}"
-            )
+    name=f"query_csv_{file.name.replace('.','_')}",
+    func=lambda q, a=pandas_agent: a.run(q), # Using 'a=pandas_agent' captures the specific instance
+    description=f"Use this to answer questions about the data in {file.name}"
+)
             all_tools.append(csv_tool)
         else:
             # Setup RAG Retriever as a Tool
