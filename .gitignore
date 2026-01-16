@@ -1,0 +1,33 @@
+# --- Sensitive API Keys & Config ---
+.env
+credentials.json
+token.json
+
+# --- Python & Environment ---
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# --- Vector Store & Local Databases ---
+# Ignore the Chroma database folder
+chroma/
+*.chroma
+*.langchain.db
+*.sql
+*.sqlite
+
+# --- Chainlit Specific ---
+.chainlit/
+.files/
+chainlit.log
+
+# --- System & IDE ---
+.vscode/
+.idea/
+.DS_Store
+*.log
